@@ -13,6 +13,7 @@
     "@typescript-eslint/indent": [ "error", 2 ],
     "@typescript-eslint/explicit-function-return-type": "error",
     "array-bracket-spacing": [ "error", "always" ],
+    "comma-dangle": [ "error", "always-multiline" ],
     "object-curly-spacing": [ "error", "always" ],
     "quotes": [ "error", "single" ],
     "semi": [ "error", "always" ]

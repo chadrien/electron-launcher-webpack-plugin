@@ -15,7 +15,8 @@
   "types": "ElectronLauncherPlugin.d.ts",
   "scripts": {
     "build": "npm run lint && tsc",
-    "lint": "eslint *.ts"
+    "lint": "eslint *.ts",
+    "lint:fix": "npm run lint -- --fix"
   },
   "dependencies": {
     "lodash": "^4.17.11",
