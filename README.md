@@ -12,6 +12,10 @@ Makes Electron + Webpack less painfull.
 
 ## Usage
 
+```bash
+$ npm install --save-dev electron-launcher-webpack-plugin
+```
+
 ```typescript
 // webpack.config.ts
 
