@@ -14,7 +14,7 @@
   "main": "ElectronLauncherPlugin.js",
   "types": "ElectronLauncherPlugin.d.ts",
   "scripts": {
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "build": "npm run lint && tsc",
     "lint": "eslint *.ts",
     "lint:fix": "npm run lint -- --fix"
