@@ -10,7 +10,7 @@
   "bugs": {
     "url": "https://github.com/chadrien/electron-webpack-plugin/issues"
   },
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "ElectronLauncherPlugin.js",
   "types": "ElectronLauncherPlugin.d.ts",
   "scripts": {
