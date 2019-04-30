@@ -10,6 +10,8 @@ Makes Electron + Webpack less painfull.
 * Reload your app's [`BrowserWindow`s](https://electronjs.org/docs/api/browser-window) when a renderer process change has been compiled
 * Will only run in `development` mode
 
+![electron-launcher-webpack-plugin](electron-launcher-webpack-plugin.gif)
+
 ## Usage
 
 ```bash
