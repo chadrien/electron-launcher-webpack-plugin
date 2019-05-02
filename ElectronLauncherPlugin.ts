@@ -9,11 +9,7 @@ export const PORT = parseInt(process.env.ELECTRON_WEBPACK_PLUGIN_PORT || '60817'
 export type RELOAD_BROWSER = 'RELOAD_BROWSER';
 export type CLOSE_APP = 'CLOSE_APP';
 
-const wsServer = new Server({
-  port: PORT,
-});
 let wsClients: WebSocket[] = [];
-wsServer.on('connection', (ws): void => { wsClients = [ ...wsClients, ws ]; });
 function sendWsCommand(command: RELOAD_BROWSER | CLOSE_APP): void {
   wsClients = wsClients.filter((ws): boolean => {
     try {
@@ -49,6 +45,11 @@ export default class ElectronLauncherPlugin {
     if (compiler.options.mode !== 'development') return; // only run in development mode
 
     if (this.isMain) {
+      const wsServer = new Server({
+        port: PORT,
+      });
+      wsServer.on('connection', (ws): void => { wsClients = [ ...wsClients, ws ]; });
+
       compiler.hooks.afterEmit.tap('ElectronLauncherPlugin', (compilation): void => {
         sendWsCommand('CLOSE_APP');
         mainEmitted$.next(compilation);
